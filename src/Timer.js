@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-class Timer extends Component {
+class Timer extends PureComponent {
   constructor() {
     super();
     this.timer = React.createRef();
@@ -10,12 +10,12 @@ class Timer extends Component {
     };
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    if (this.state.time === nextState.time) {
-      return false
-    }
-    return true
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   if (this.state.time === nextState.time) {
+  //     return false
+  //   }
+  //   return true
+  // }
 
   componentDidUpdate(){
     this.timer.current.style.color =
